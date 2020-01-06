@@ -1,35 +1,14 @@
 import React from "react"
-import { graphql } from "gatsby"
-import PostLink from "../components/PostLink"
+import { Link } from "gatsby"
 
-const IndexPage = ({
-    data: {
-        allMarkdownRemark: { edges },
-    },
-}) => { 
-    const Posts = edges
-        .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
-        .map(edge => <PostLink key={edge.node.id} post={edge.node} />)
-
-    return <div>{Posts}</div>
+let IndexPage = () => {
+    return (
+        <div>  
+            <h1>Hello frind</h1>
+            <Link to="/link/">linkky page</Link>
+        </div>
+     
+    )
 }
 
 export default IndexPage
-
-export const pageQuery = graphql`
-  query {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
-      edges {
-        node {
-          id
-          excerpt(pruneLength: 250)
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            path
-            title
-          }
-        }
-      }
-    }
-  }
-`
