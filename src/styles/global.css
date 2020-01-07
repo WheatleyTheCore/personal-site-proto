@@ -2,6 +2,10 @@
     THIS FILE IS FOR DEFAULT STYLES
     For everything else, add the style to the component itself. 
 */
+body {    
+    margin: 0 !important;
+    padding: 0 !important;
+}
 
 @media only screen and (max-width: 780px) {
     html {
