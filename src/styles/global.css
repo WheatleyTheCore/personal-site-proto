@@ -1,9 +1,10 @@
-html { 
-    padding-left: 20%;
-}
+/*
+    THIS FILE IS FOR DEFAULT STYLES
+    For everything else, add the style to the component itself. 
+*/
 
 @media only screen and (max-width: 780px) {
     html {
-        text-align: center;
+        text-align: center; 
     }
 }
