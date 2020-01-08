@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import PostLink from "../components/PostLink"
+import PostLink from "../components/Link/Link"
 
 const LinkPage = ({
     data: {
@@ -8,10 +8,10 @@ const LinkPage = ({
     },
 }) => {
     const Posts = edges
-        .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
+        .filter(edge => !!edge.node.frontmatter.date)
         .map(edge => <PostLink key={edge.node.id} post={edge.node} />)
 
-    return <div>link{Posts}</div>
+    return <div>{Posts}</div>
 }
 
 export default LinkPage
